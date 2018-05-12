@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script type="text/javascript" src="BigInt.js">
+    </script>
+    <script type="text/javascript" src="bistro.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+
+    <div class="container">
+        <div class="form-group row">
+            <button type="button" class="btn btn-primary">
+                p <span class="badge badge-light"></span>
+            </button>
+            <div class="col-10">
+                <input class="form-control" type="text" value="p" id="p">
+            </div>
+        </div>
+        <div class="form-group row">
+            <button type="button" class="btn btn-primary">
+                q <span class="badge badge-light"></span>
+            </button>
+            <div class="col-10">
+                <input class="form-control" type="text" value="q" id="q">
+            </div>
+        </div>
+        <div class="form-group row">
+            <button type="button" class="btn btn-primary">
+                n <span class="badge badge-light"></span>
+            </button>
+            <div class="col-10">
+                <input class="form-control" type="text" value="Answer" id="n">
+            </div>
+        </div>
+        <div class="form-group row">
+            <button onclick="calculate()" type="button" class="btn btn-primary">Calculate!</button>
+        </div>
+
+    </div>
+
+
+    <script>
+        function calculate() {
+            const p = document.getElementById("p").value;
+            const q = document.getElementById("q").value;
+            const n = bi_multiply(p, q);
+            document.getElementById("n").value = n.toString()
+        }
+    </script>
